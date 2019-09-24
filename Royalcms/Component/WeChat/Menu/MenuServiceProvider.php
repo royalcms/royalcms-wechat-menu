@@ -18,7 +18,7 @@ class MenuServiceProvider extends ServiceProvider
     {
         $wechat = $this->royalcms['wechat'];
 
-        $wechat->bindShared('menu', function($wechat)
+        $wechat->singleton('menu', function($wechat)
         {
             return new Menu($wechat['access_token']);
         });
